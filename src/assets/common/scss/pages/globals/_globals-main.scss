@@ -1,0 +1,13 @@
+
+body {
+  &.has--no-scroll {
+    height: 100%;
+    overflow: hidden;
+    
+    @include mq('sm') {
+      @include rem(margin-right, 17px);
+    }
+  }
+
+  @include scrollbar(7px, $color-black-lighten, darken($color-white, 15%));
+}

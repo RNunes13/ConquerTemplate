@@ -1,0 +1,47 @@
+
+%btn {
+  @include reset-button;
+  @include flex-centered;
+  @include rem(padding, 5px 10px);
+  @include rem(border-radius, 5px);
+  cursor: pointer;
+  height: $btn-height;
+  color: $color-white;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 300ms $standard-ease;
+
+  // All buttons
+  &--white {
+    @extend %btn;
+
+    &:focus,
+    &.has--focus {
+      outline: 0;
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.is--disabled,
+    &:disabled {
+      @include button-disabled;
+    }
+
+    // Opinionated: add 'hand' cursor to non-disabled elements
+    &:not(:disabled):not(.is--disabled) {
+      cursor: pointer;
+    }
+  }
+
+  /**
+   * Specif buttons styles
+   */
+  &--white {
+    background-color: $color-white;
+    border-color: lighten($color-blue-lighten, 10%);
+    color: $color-black;
+
+    &:hover {
+      background-color: darken($color-white, 8%);
+    }
+  }
+}

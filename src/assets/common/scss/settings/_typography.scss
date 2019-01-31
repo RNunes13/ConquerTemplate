@@ -1,0 +1,25 @@
+
+/**
+ * Typography
+ */
+$font-main: 'Open Sans', Arial, sans-serif !default;
+$font-size: 16px !default;
+
+/**
+ * Font Weight
+ * Uses by 'font-weight' mixin
+ */
+$weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900
+);
+
+/* stylelint-disable-next-line */
+$font-weight-base: map-get($weights, normal);

@@ -1,0 +1,24 @@
+
+/**
+ * General Variables
+ * Call on every SASS files
+ */
+
+// Colors
+$color-body-text: $color-black;
+$color-body-bg: $color-white;
+
+// Containers
+$container-width: 1400px;
+
+// Header
+$mobile-header-height: 50px;
+$desktop-header-height: 75px;
+
+// Material
+$standard-ease    : cubic-bezier(0.4, 0.0, 0.2, 1);
+$accelerate-ease  : cubic-bezier(0.4, 0.0, 1, 1);
+$decelerate-ease  : cubic-bezier(0.0, 0.0, 0.2, 1);
+
+// Button
+$btn-height: 40px;

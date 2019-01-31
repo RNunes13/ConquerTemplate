@@ -1,0 +1,18 @@
+
+- let features = [{name: 'Flexbox', imageUrl: '//c1.staticflickr.com/5/4805/45962011985_dd2b3e7df4_o.jpg', callToAction: 'See Details'},{name: 'Responsive Design', imageUrl: '//c1.staticflickr.com/5/4917/33001049178_53c4f24409_o.jpg', callToAction: 'See Details'},{name: 'Lazyload', imageUrl: '//c2.staticflickr.com/8/7922/33001049138_9f14671d43_o.jpg', callToAction: 'See Details'}]
+
+div(class="home__features js--features")
+  each feature in features
+    article(class="home__features--content")
+      div(class="home__features--container")
+        figure(class="home__features--image-container")
+          img(class="home__features--image has--placeloader has--lazy js--lazy",
+              src=imgRemoveIconNotFound,
+              data-src=feature.imageUrl,
+              alt=feature.name)
+        div(class="home__features--text-wrap")
+          h3(class="home__features--title") #{feature.name}
+          div(class="home__features--description")
+            p Morbi sagittis justo a velit placerat ullamcorper quis quis velit. Sed convallis at risus ullamcorper auctor. Praesent quis velit neque. Quisque semper porta nisi vitae suscipit. Duis lectus magna, ornare ac scelerisque.
+          if feature.callToAction
+            button(class="home__features--button") #{feature.callToAction}

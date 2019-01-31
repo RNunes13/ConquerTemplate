@@ -1,0 +1,19 @@
+
+- let blogs = [{name: 'Two Column Left Side', imageUrl: '//c1.staticflickr.com/5/4822/46876448411_0fb6afc09e_o.jpg', callToAction: ''},{name: 'Two Column Right Side', imageUrl: '//c2.staticflickr.com/8/7830/31935216467_533b1f5594_o.jpg', callToAction: 'Read More'}]
+
+div(class="home__features js--features")
+  each blog in blogs
+    article(class="home__blog--content")
+      div(class="home__blog--container")
+        figure(class="home__blog--image-container")
+          img(class="home__blog--image has--placeloader has--lazy js--lazy",
+              src=imgRemoveIconNotFound,
+              data-src=blog.imageUrl,
+              alt=blog.name)
+        div(class="home__blog--text-wrap")
+          h3(class="home__blog--title") #{blog.name}
+          div(class="home__blog--description")
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur. Nullam dignissim varius suscipit. Sed in leo sit amet velit finibus pretium.
+            p Vestibulum vel mauris at erat mattis accumsan et ac lorem. Cras non venenatis orci, sed tincidunt massa. Duis nisl lectus, auctor eu sodales at, dignissim eu orci. Sed vitae venenatis magna, in blandit metus.
+          if blog.callToAction
+            button(class="home__blog--button") #{blog.callToAction}

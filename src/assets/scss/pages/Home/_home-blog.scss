@@ -1,0 +1,57 @@
+.home__blog {
+  @extend %card;
+  @include rem(margin-top, 60px);
+
+  &--container {
+    height: 100%;
+  }
+
+  &--content {
+    @extend %card--content;
+    width: 49%;
+  }
+
+  &--image {
+    @extend %card--image;
+
+    &:not(.has--placeloader) {
+      width: 100%;
+      height: auto;
+
+      @include mq('md', max) {
+        height: 100%;
+        min-width: 500px;
+      }
+    }
+
+    &.has--placeloader {
+      @include rem(padding, 120px 277px);
+    }
+
+    &-container {
+      @extend %card--image-container;
+    }
+  }
+
+  &--text-wrap {
+    @extend %card--text-wrap;
+    // 180px é a altura do container da imagem do card
+    height: calc(100% - 180px);
+  }
+
+  &--title {
+    @extend %card--title;
+  }
+
+  &--description {
+    @extend %card--description;
+
+    p:not(:last-child) {
+      @include rem(margin-bottom, 20px);
+    }
+  }
+
+  &--button {
+    @extend %card--button;
+  }
+}

@@ -1,0 +1,55 @@
+
+$features: '.home__features';
+
+.home__features {
+  @extend %card;
+  @include rem(margin-top, 70px);
+
+  @include mq('sm', max) {
+    flex-direction: column;
+  }
+
+  &--container {
+    height: 100%;
+  }
+
+  &--content {
+    @extend %card--content;
+    width: 32%;
+  }
+
+  &--image {
+    @extend %card--image;
+
+    &:not(.has--placeloader) {
+      @include rem(min-width, 360px);
+      width: 100%;
+    }
+
+    &.has--placeloader {
+      @include rem(padding, 90px 180px);
+    }    
+
+    &-container {
+      @extend %card--image-container;
+    }
+  }
+
+  &--text-wrap {
+    @extend %card--text-wrap;
+    // 180px é a altura do container da imagem do card
+    height: calc(100% - 180px);
+  }
+
+  &--title {
+    @extend %card--title;
+  }
+
+  &--description {
+    @extend %card--description;
+  }
+
+  &--button {
+    @extend %card--button;
+  }
+}

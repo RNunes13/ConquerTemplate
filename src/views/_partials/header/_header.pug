@@ -1,0 +1,12 @@
+
+//- Menu items
+- let items = [{text: 'Home', link: '#intro'},{text: 'About Us', link: '#aboutUs'},{text: 'Services', link: '#services'},{text: 'Contact', link: '#contact'},{text: 'External', link: 'https://www.facebook.com/templatemo/?rc=p'}]
+
+header(class="header transparent js--header")
+  div(class="header__container")
+    div(class="header__menu js--menu")
+    nav(class="header__navbar js--navbar")
+      ul(class="header__navbar--items js--items")
+        each item in items
+          li(class="header__navbar--item js--item")
+            a(class="header__navbar--link js--link", href=item.link) #{item.text}

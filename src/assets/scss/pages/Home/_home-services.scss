@@ -7,8 +7,6 @@ $services: '.home__services';
   background-repeat: no-repeat;
 
   @include mq('sm') {
-    width: 100vw;
-    height: 100vh;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -103,8 +101,8 @@ $services: '.home__services';
     }
 
     &.has--placeloader {
-      @include rem(padding, 130px);
-    }    
+      @include rem(padding, 130px 139px !important);
+    }
 
     &-container {
       @extend %card--image-container;
@@ -146,6 +144,13 @@ $services: '.home__services';
 
         @include mq('sm', max) {
           @include rem(min-width, 684px);
+        }
+      }
+      &.has--placeloader {
+        @include rem(padding, 215px 50% !important);
+
+        @include mq('sm', max) {
+          @include rem(padding, 130px 50% !important);
         }
       }
       &-container {

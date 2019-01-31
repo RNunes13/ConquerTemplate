@@ -15,22 +15,22 @@
     }
 
     &:hover {
-      img {
+      img:not(.has--placeloader) {
         transform: translate(-50%, -50%) scale(1.08);
       }
     }
   }
 
   &--image {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     will-change: transform;
     transition: 500ms $standard-ease;
 
     &:not(.has--placeloader) {
-      position: absolute;
-      height: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
 
     &.has--placeloader {

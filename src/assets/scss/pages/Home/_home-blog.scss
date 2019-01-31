@@ -25,18 +25,19 @@
     }
 
     &.has--placeloader {
-      @include rem(padding, 120px 277px);
+      @include rem(padding, 120px 284px !important);
     }
 
     &-container {
       @extend %card--image-container;
+      @include rem(height, 240px);
     }
   }
 
   &--text-wrap {
     @extend %card--text-wrap;
-    // 180px é a altura do container da imagem do card
-    height: calc(100% - 180px);
+    // 240px é a altura do container da imagem do card
+    height: calc(100% - 240px);
   }
 
   &--title {

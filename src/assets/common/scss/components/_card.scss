@@ -55,7 +55,7 @@
   &--title {
     @include rem(margin-bottom, 15px);
     @include rem(font-size, 18px);
-    color: $color-blue-dark;
+    color: $color-blue-lighten;
     text-align: center;
   }
 

@@ -1,0 +1,170 @@
+
+$services: '.home__services';
+
+.home__services {
+  @include rem(margin-top, 50px);
+  background-image: url('/assets/img/bg-services.jpg');
+  background-repeat: no-repeat;
+
+  @include mq('sm') {
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &--container {
+    @include rem(margin-bottom, 40px);
+  }
+
+  &--top {
+    @include rem(padding, 80px 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba($color-black, 0.2);
+
+    @include mq('sm', max) {
+      background-color: rgba($color-black, 0.5);
+    }
+  }
+
+  &--title,
+  &--description {
+    color: $color-white;
+  }
+
+  &--title {
+    @include rem(margin-bottom, 20px);
+    @include rem(font-size, 36px);
+  }
+
+  &--description {
+    @include rem(font-size, 18px);
+    @include rem(line-height, 28px);
+
+    @include mq('sm') {
+      margin: 0 auto;
+      width: 700px;
+    }
+  }
+
+  &--middle,
+  &--bottom {
+    background-color: $color-white;
+
+    &-container {
+      @extend %card;
+      padding: 0 20px 20px;
+  
+      @include mq('lg') {
+        margin: 0 auto;
+        width: 1200px;
+      }
+    }
+  }
+
+  &--middle {
+    &-container {
+      padding-top: 60px;
+    }
+  }
+
+  &--content {
+    @extend %card--content;
+    width: 24%;
+
+    &-container {
+      height: 100%;
+    }
+
+    &-title {
+      @extend %card--title;
+    }
+  
+    &-description {
+      @extend %card--description;
+  
+      p:not(:last-child) {
+        @include rem(margin-bottom, 20px);
+      }
+    }
+  }
+
+  &--image {
+    @extend %card--image;
+
+    &:not(.has--placeloader) {
+      @include rem(min-width, 260px);
+      width: 100%;
+    }
+
+    &.has--placeloader {
+      @include rem(padding, 130px);
+    }    
+
+    &-container {
+      @extend %card--image-container;
+      @include rem(height, 260px);
+    }
+  }
+
+  &--text-wrap {
+    @extend %card--text-wrap;
+    // 260px é a altura do container da imagem do card
+    height: calc(100% - 260px);
+  }
+
+  &--button {
+    @extend %card--button;
+  }
+
+  &--bottom {
+    #{$services}--content {
+      width: 100%;
+
+      &-title {
+        @include rem(margin-top, 20px);
+        @include rem(margin-bottom, 5px);
+        @include rem(font-size, 20px);
+        text-align: left;
+      }
+    
+      &-description {    
+        p:not(:last-child) {
+          @include rem(margin-bottom, 20px);
+        }
+      }
+    }
+
+    #{$services}--image {
+      &:not(.has--placeloader) {
+        @include rem(min-width, 1140px);
+
+        @include mq('sm', max) {
+          @include rem(min-width, 684px);
+        }
+      }
+      &-container {
+        @include rem(height, 430px);
+
+        @include mq('sm', max) {
+          @include rem(height, 260px);
+        }
+      }
+    }
+
+    #{$services}--text-wrap {
+      @include rem(padding, 20px 30px);
+      // 430px é a altura do container da imagem do card
+      height: calc(100% - 430px);
+    }
+
+    #{$services}--button {
+      @include rem(margin, 30px 0 10px);
+    }
+  }
+}

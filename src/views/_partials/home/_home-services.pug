@@ -1,0 +1,43 @@
+
+- let services = [{name: 'Column One', imageUrl: '//c2.staticflickr.com/8/7922/46876454741_e7e02b22f8_o.jpg', callToAction: ''},{name: 'Column Two', imageUrl: '//c1.staticflickr.com/5/4893/46876454711_2dbcefff03_o.jpg', callToAction: 'Read It'},{name: 'Column Three', imageUrl: '//c1.staticflickr.com/5/4813/46876454661_9497b7823e_o.jpg', callToAction: ''},{name: 'Column Four', imageUrl: '//c1.staticflickr.com/5/4910/46824455892_744bc2cd89_o.jpg', callToAction: 'Details'}]
+- let bigColumn = {name: 'One Big Column', imageUrl: '//c1.staticflickr.com/5/4899/46824456052_de83069a71_b.jpg', callToAction: 'Read More'}
+
+section(class="home__services js--services", id="services")
+  div(class="home__services--container")
+    div(class="home__services--top")
+      h1(class="home__services--title") Our Services
+      p(class="home__services--description") Nunc diam leo, fringilla vulputate elit lobortis, consectetur vestibulum quam. Sed id felis ligula. In euismod libero at magna dapibus, in rutrum velit lacinia. Etiam a mi quis arcu varius condimentum.
+
+    div(class="home__services--middle")
+      div(class="home__services--middle-container")
+        each service in services
+          article(class="home__services--content")
+            div(class="home__services--content-container")
+              figure(class="home__services--image-container")
+                img(class="home__services--image has--placeloader has--lazy js--lazy",
+                    src=imgRemoveIconNotFound,
+                    data-src=service.imageUrl,
+                    alt=service.name)
+              div(class="home__services--text-wrap")
+                h3(class="home__services--content-title") #{service.name}
+                div(class="home__services--content-description")
+                  p Ut ac odio scelerisque ante ornare commodo. Sed faucibus dui libero, in tincidunt purus pretium quis. Fusce posuere egestas enim eu viverra.
+                if service.callToAction
+                  button(class="home__services--button") #{service.callToAction}
+
+    div(class="home__services--bottom")
+      div(class="home__services--bottom-container")
+        article(class="home__services--content")
+          div(class="home__services--content-container")
+            figure(class="home__services--image-container")
+              img(class="home__services--image has--placeloader has--lazy js--lazy",
+                  src=imgRemoveIconNotFound,
+                  data-src=bigColumn.imageUrl,
+                  alt=bigColumn.name)
+            div(class="home__services--text-wrap")
+              h3(class="home__services--content-title") #{bigColumn.name}
+              div(class="home__services--content-description")
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget eros maximus, ut cursus sem euismod. Donec iaculis tristique odio at consectetur. Nullam dignissim varius suscipit. Sed in leo sit amet velit finibus pretium. Vivamus dictum nisi ac fermentum interdum. Vestibulum vel mauris at erat mattis accumsan et ac lorem. Cras non venenatis orci, sed tincidunt massa. Duis nisl lectus, auctor eu sodales at, dignissim eu orci. Sed vitae venenatis magna, in blandit metus. Praesent volutpat cursus rhoncus. Aenean arcu diam, suscipit ac neque in, sollicitudin convallis orci.
+                p Fusce eu porta massa, sed tincidunt turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus a urna tellus. Integer pharetra vitae nisi et lacinia. Morbi sagittis justo a velit placerat ullamcorper quis quis velit. Sed convallis at risus ullamcorper auctor. Praesent quis velit neque. Quisque semper porta nisi vitae suscipit. Duis lectus magna, ornare ac scelerisque quis, maximus eget nisi.
+              if bigColumn.callToAction
+                button(class="home__services--button") #{bigColumn.callToAction}

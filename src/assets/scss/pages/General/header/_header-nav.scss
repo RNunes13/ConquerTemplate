@@ -1,0 +1,89 @@
+
+.header__navbar {
+  transition: $default-transition;
+  will-change: transform;
+  
+  @include mq('sm', max) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $color-blue-dark;
+    transform: translateY(-100%);
+  }
+
+  &--items {
+    display: flex;
+    justify-content: center;
+
+    @include mq('sm', max) {
+      flex-direction: column;
+    }
+  }
+
+  &--item {
+    @include rem(margin, 10px);
+    @include rem(border-radius, 2px);
+    border: 1px solid $color-blue-lighten;
+    text-align: center;
+    transition: $default-transition;
+
+    @include mq('sm', max) {
+      border: 1px solid transparent;
+    }
+
+    &.is--active,
+    &:hover {
+      @include mq('sm') {
+        background-color: rgba($color-white, 0.1);
+      }
+    }
+
+    &.is--active {
+      @include mq('sm', max) {
+        .header__navbar--link {
+          border-bottom: 1px solid $color-white;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      @include mq('sm', max) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &--link {
+    @include rem(min-width, 100px);
+    @include rem(padding, 10px 15px);
+    @include rem(font-size, 19px);
+    display: inline-block;
+    color: $color-white;
+    border: 1px solid transparent;
+    transition: $default-transition;
+
+    &:hover {
+      @include mq('sm', max) {
+        border-bottom: 1px solid $color-white;
+      }
+    }
+  }
+
+  &.is--active {
+    @include mq('sm', max) {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.has--scroll {
+    @include mq('sm', max) {
+      height: 100vh;
+      overflow-y: scroll;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+
+$header: '.header';
+$navbar: '#{$header}__navbar';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: $default-transition;
+  z-index: z('header');
+
+  @include mq('sm') {
+    height: $desktop-header-height;
+    background-color: $color-blue-dark;
+  }
+
+  @include mq('sm', max) {
+    height: $mobile-header-height;
+  }
+
+  &__menu {
+    @include rem(padding, 5px 15px);
+    @include rem(top, 10px);
+    @include rem(right, 10px);
+    @include rem(border-radius, 5px);
+    cursor: pointer;
+    position: fixed;
+    background-color: $color-blue-dark;
+    transition: $default-transition;
+    z-index: z('menu');
+
+    &::before {
+      @extend %iconfont;
+      @include rem(font-size, 20px);
+      content: '\EA01';
+      display: inline-block;
+      color: $color-white;
+    }
+
+    @include mq('sm') {
+      display: none;
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+
+    #{$navbar}--item {
+      border-color: transparent;
+      border-radius: 0;
+
+      @include mq('sm') {
+        &.is--active,
+        &:hover {
+          border-bottom-color: $color-white;
+          background-color: transparent;
+        }
+      }
+
+      @include mq('sm', max) {
+        &.is--active,
+        &:hover {
+          background-color: transparent;
+        }
+
+        &.is--active {
+          #{$navbar}--link {
+            border-bottom: 1px solid $color-white;
+          }
+        }
+      }
+    }
+
+    #{$navbar}--link {
+      &:hover {
+        @include mq('sm', max) {
+          border-bottom: 1px solid $color-white;
+        }
+      }
+    }
+
+    #{$header}__menu {
+      background-color: transparent;
+    }
+  }
+}
